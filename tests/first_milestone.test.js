@@ -35,11 +35,11 @@ describe('User API Test', () => {
     });
 
     after(async () => {
-        // run N times after each test
+        // run a single time after tests
     });
 
-    after(async () => {
-        // run a single time after tests
+    afterEach(async () => {
+        // run N times after each test
     });
 
 });

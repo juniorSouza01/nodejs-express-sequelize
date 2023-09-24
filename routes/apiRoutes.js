@@ -7,7 +7,7 @@ app.get('/hello-world', (req, res) => {
 });
 
 app.get('/hello-world/:name', (req, res) => {
-    const name = req.query.name;
+    const name = req.params.name;
     res.send(`Hello ${name}`);
 });
 

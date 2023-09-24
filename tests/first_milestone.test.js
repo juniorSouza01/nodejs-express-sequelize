@@ -1,0 +1,46 @@
+const chai = require('chai');
+const expect = chai.expect;
+const supertest = require('supertest');
+
+// import your app here
+const app = require('../routes/apiRoutes');
+const agent = supertest.agent(app);
+
+describe('User API Test', () => {
+
+    before(async () => {
+        // run a single time before tests
+    });
+
+    beforeEach(async () => {
+        // run N times before each test
+    });
+
+    it('test hello-world route', async () => {
+        const res = await agent.get('/hello-world');
+        expect(res.statusCode).equals(200);
+        expect(res.text).equals('Hello world!');
+    });
+
+    it('test hello-world route using query params', async() => {
+        const res = await agent.get('/hello-world?name=zeca');
+        expect(res.statusCode).equals(200);
+        expect(res.text).equals('Hello zeca!');
+    });
+
+    it('test hello-world route using path param', async() => {
+        const res = await agent.get('hello-world/zeca');
+        expect(res.statusCode).equals(200);
+        expect(res.text).equals('Hello zeca!');
+    });
+
+    after(async() => {
+        //run a single time after test
+    });
+
+    afterEach(async () => {
+        //run N times after each tests
+    });
+
+
+});

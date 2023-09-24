@@ -18,29 +18,28 @@ describe('User API Test', () => {
 
     it('test hello-world route', async () => {
         const res = await agent.get('/hello-world');
-        expect(res.statusCode).equals(200);
-        expect(res.text).equals('Hello world!');
+        expect(res.statusCode).to.be.equals(200);
+        expect(res.text).to.be.equals('Hello world!');
     });
 
-    it('test hello-world route using query params', async() => {
+    it('test hello-world route using query param', async () => {
         const res = await agent.get('/hello-world?name=zeca');
-        expect(res.statusCode).equals(200);
-        expect(res.text).equals('Hello zeca!');
+        expect(res.statusCode).to.be.equals(200);
+        expect(res.text).to.be.equals('Hello zeca!');
     });
 
-    it('test hello-world route using path param', async() => {
-        const res = await agent.get('hello-world/zeca');
-        expect(res.statusCode).equals(200);
-        expect(res.text).equals('Hello zeca!');
+    it('test hello-world route using path param', async () => {
+        const res = await agent.get('/hello-world/zeca');
+        expect(res.statusCode).to.be.equals(200);
+        expect(res.text).to.be.equals('Hello zeca!');
     });
 
-    after(async() => {
-        //run a single time after test
+    after(async () => {
+        // run N times after each test
     });
 
-    afterEach(async () => {
-        //run N times after each tests
+    after(async () => {
+        // run a single time after tests
     });
-
 
 });

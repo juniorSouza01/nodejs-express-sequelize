@@ -8,7 +8,7 @@ app.get('/hello-world', (req, res) => {
 
 app.get('/hello-world/:name', (req, res) => {
     const name = req.params.name;
-    res.send(`Hello ${name}`);
+    res.send(`Hello ${name}!`);
 });
 
 module.exports = app;

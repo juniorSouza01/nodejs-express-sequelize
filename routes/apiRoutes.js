@@ -6,7 +6,7 @@ app.get('/hello-world', async (req, res) => {
     res.send(`Hello ${name}!`);
 });
 
-app.get('/hello-world/:name', async() => {
+app.get('/hello-world/:name', async(req, res) => {
     const name = req.query.name;
     res.send(`Hello ${name}`);
 });
